@@ -1,0 +1,126 @@
+page-request-info {
+  .img-container {
+    // overflow: hidden;
+    // height: 40vh;
+    //height: 100%;
+    //width: 100%;
+    // width: 40vh;
+    //position: absolute;
+    //z-index: 100;
+  }
+
+  .text {
+    color: rgb(255, 255, 255);
+    margin-bottom: 1.6rem;
+  }
+
+  .toolbar-background {
+    background: $bg-gradient;
+  }
+  
+
+  .class-toolbar-rejected {
+    .toolbar-background { 
+      background: rgb(236, 29, 0) !important;
+    }
+  }
+  .class-toolbar-confirmed {
+    .toolbar-background {
+      background: rgb(0, 114, 0) !important;
+    }
+  }
+  .class-toolbar-pending {
+    .toolbar-background {
+      background: rgb(255,140,0) !important;
+    }
+  }
+  .class-toolbar-finished {
+    .toolbar-background {
+      background:  color($colors, secondary) !important;
+    }
+  }
+
+
+  .text-toolbar {
+    color: white !important;
+  }
+
+  .text-success {
+    color: white !important;
+  }
+
+  .image {
+    padding: 3rem;
+    border-radius: 50%;
+    height: 25rem;
+    width: 25rem;
+    object-fit: cover;
+  }
+
+  .stars {
+    ion-icon {
+      color: color($colors, gray);
+      padding: 0;
+      margin: 0.2rem;
+      font-size: 30px;
+    }
+  }
+
+  .card-header-md {
+    font-size: 2rem;
+    padding: 16px;
+  }
+
+  .services {
+    list-style-type: circle;
+    color: color($colors, light);
+  }
+
+  .home-style {
+    padding: 0.4em;
+    border-radius: 15px;
+    height: 20px;
+    width: 85px;
+    font-size: 1rem;
+  }
+
+  .card {
+    background-color: transparent;
+    border-color: white;
+    border-style: solid;
+    border-width: 1px;
+    color: white;
+  }
+
+  .button-comment {
+    border-radius: 25px;
+    overflow: hidden;
+    height: 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+
+    // text-transform: uppercase;
+  }
+
+  .button-solicitud {
+    border-radius: 30px;
+    overflow: hidden;
+    height: 2rem;
+    width: 70%;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 2.5rem;
+
+    // text-transform: uppercase;
+  }
+
+  .text-schedule {
+    font-size: 1.2rem;
+    color: color($colors, gray);
+  }
+
+  .text-price {
+    font-size: 1.8rem;
+    color: color($colors, white);
+  }
+}

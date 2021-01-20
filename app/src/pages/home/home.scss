@@ -1,0 +1,93 @@
+page-home {
+    .header {
+        .toolbar {
+            img {
+                max-width: 150px;
+            }
+        }
+
+        .toolbar-content {
+            .searchbar-input {
+                border-radius: 40px;
+            }
+        }
+    }
+
+    .content {
+        .articles-grid {
+            .col {
+                padding: .5em;
+
+                .article-container {
+                    //background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), url(../../assets/imgs/peinado.jpg);
+                    background-size: cover !important;
+                    background-position: center center !important;
+                    height: 15em;
+                    //border-radius: 10px;
+                    position: relative;
+
+                    .price-container {
+                        position: absolute;
+                        top: 3em;
+                        right: 0;
+                        height: 2em;
+                        width: 4.5em;
+                        background: color($colors, primary);
+                        font-size: 1em;
+                        font-weight: bold;
+                        color: white;
+                        padding-right: .3em;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-top-left-radius: 10px;
+                        border-bottom-left-radius: 10px;
+                    }
+
+                    .top-icons {
+                        position: absolute;
+                        //top: .5em;
+                        padding: 0;
+                        right: 0;
+                        //color: rgba(255, 255, 255, 0.5);
+                        color: color($colors, primary);
+
+                        .liked {
+                            color: color($colors, primary);
+                        }
+                    }
+
+                    .article-content {
+                        position: absolute;
+                        bottom: 0;
+
+                        .article-title {
+                            padding-bottom: 0;
+
+                            h3 {
+                                font-size: 1em;
+                                color: color($colors, white);
+                                font-weight: bold;
+                                margin-bottom: 0;
+                            }
+                        }
+
+                        .article-category {
+                            font-size: .7em;
+                            color: rgba(255, 255, 255, 0.5);
+                            font-weight: bold;
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            display: flex;
+                            align-items: center;
+                        }
+
+                        .article-lock {
+                            color: rgba(255, 255, 255, 0.5);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

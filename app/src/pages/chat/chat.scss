@@ -1,0 +1,181 @@
+page-chat {
+    .content {
+        background: color($colors, primary);
+    }
+
+    // $stable: #f8f8f8 !default;
+
+    .header-avatar {
+        background-color: color($colors, primary);
+        color: white;
+        // object-fit: cover;
+        padding-left: 0;
+        .item-inner {
+            border-bottom: none !important;
+        }
+    }
+
+    .scroll {
+        padding: 10px 0 50px !important;
+    }
+
+    ion-footer {
+        .toolbar-background {
+            background: color($colors, primary);
+        }
+
+        .item {
+            border-radius: 50px;
+        }
+
+        .send-btn {
+            color: #8f7f7f;
+            .icon {
+                color: "#8f7f7f";
+            }
+        }
+    }
+
+
+    .small-msg {
+        display: flex;
+        justify-content: flex-end;
+        font-size: x-small;
+        font-style: italic;
+        opacity: 0.8;
+        margin-top: 2px;
+        margin-left: 21px;
+        color: white
+    }
+    
+    .messages {
+        display: -webkit-box !important;
+        display: -moz-box !important;
+        display: -ms-flexbox !important;
+        display: -webkit-flex !important;
+        display: flex !important;
+        -webkit-align-content: center !important;
+        -ms-flex-line-pack: center !important;
+        align-content: center !important;
+        -webkit-box-align: center !important;
+        -moz-box-align: center !important;
+        -webkit-align-items: center !important;
+        -ms-flex-align: center !important;
+        align-items: center !important; //margin-bottom: 20px !important;
+        // background-color: color($colors, secondary);
+        .message {
+            -webkit-box-flex: 1 !important;
+            -moz-box-flex: 1 !important;
+            -webkit-flex: 1 1 auto !important;
+            -ms-flex: 1 1 auto !important;
+            flex: 1 1 auto !important;
+            padding: 10px !important;
+            -webkit-transition: all 250ms ease-in-out !important;
+            transition: all 250ms ease-in-out !important;
+            overflow: hidden !important;
+            text-align: left !important;
+            -webkit-transform: translate3d(0, 0, 0) !important;
+            -moz-transform: translate3d(0, 0, 0) !important;
+            transform: translate3d(0, 0, 0) !important;
+        }
+    }
+
+    .time {
+        -webkit-box-flex: 0 !important;
+        -moz-box-flex: 0 !important;
+        -webkit-flex: 0 1 auto !important;
+        -ms-flex: 0 1 auto !important;
+        flex: 0 1 auto !important;
+        -webkit-align-self: auto !important;
+        -ms-flex-item-align: auto !important;
+        align-self: auto !important;
+        width: 120px !important;
+        text-align: center !important;
+        padding: 0 0 0 0 !important;
+        -webkit-transition: all 250ms ease-in-out !important;
+        transition: all 250ms ease-in-out !important;
+        -webkit-transform: translate3d(10px, 0, 0) !important;
+        -moz-transform: translate3d(10px, 0, 0) !important;
+        transform: translate3d(10px, 0, 0) !important;
+
+        &.slide-right {
+            -webkit-transform: translate3d(130px, 0, 0) !important;
+            -moz-transform: translate3d(130px, 0, 0) !important;
+            transform: translate3d(130px, 0, 0) !important;
+        }
+    } //This will change
+    .messages.other {
+        .message {
+            -webkit-transform: translate3d(0, 0, 0) !important;
+            -moz-transform: translate3d(0, 0, 0) !important;
+            transform: translate3d(0, 0, 0) !important;
+            text-align: right !important;
+        }
+
+        .message.slide-right {
+            -webkit-transform: translate3d(120px, 0, 0) !important;
+            -moz-transform: translate3d(120px, 0, 0) !important;
+            transform: translate3d(120px, 0, 0) !important;
+        }
+
+        span {
+            display: inline-block !important;
+            background: color($colors, secondary) !important;
+            color: white !important;
+            padding: 10px !important;
+            border-radius: 10px !important;
+            max-width: 240px !important;
+            text-align: left !important;
+        }
+    }
+
+    .messages.adm {
+        .message {
+            -webkit-transform: translate3d(0, 0, 0) !important;
+            -moz-transform: translate3d(0, 0, 0) !important;
+            transform: translate3d(0, 0, 0) !important;
+            text-align: center !important;
+        }
+
+        .message.slide-right {
+            -webkit-transform: translate3d(120px, 0, 0) !important;
+            -moz-transform: translate3d(120px, 0, 0) !important;
+            transform: translate3d(120px, 0, 0) !important;
+        }
+
+        span {
+            min-width: 80%;
+            display: inline-block !important;
+            background: #FFC300 !important;
+            color: white !important;
+            padding: 10px !important;
+            border-radius: 10px !important;
+            // max-width: 240px !important;
+            text-align: center !important;
+        }
+    }
+
+    .slide-left {
+        margin-top: 0.5em;
+        span {
+            display: inline-block !important;
+            background: #8f7f7f !important;
+            color: white !important;
+            padding: 10px !important;
+            border-radius: 10px !important;
+            text-align: left !important;
+            max-width: 240px !important;
+            margin-top: 0.5em !important;
+        }
+    }
+
+    .chat-improper {
+        background-color: #FFC300; 
+        height: 2.7em;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
+
+ 
+}

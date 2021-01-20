@@ -1,0 +1,45 @@
+page-profile {
+  .profile-img {
+    margin-top: -5.5rem !important;
+    z-index: 100;
+    border-radius: 50%;
+    height: 10rem;
+    width: 10rem;
+    object-fit: cover;
+    margin-left: 2rem;
+  }
+
+     .atraction-img {
+        height: 17rem;
+    }
+
+    .item-md {
+        padding-bottom: 16px;
+    }
+
+  .profile-detail {
+    margin-left: 0.4rem;
+    h5 {
+      margin-top: 1rem;
+      margin-bottom: 0.3rem;
+      font-size: 2rem;
+      color: color($colors, light);
+    }
+    p {
+      margin-top: 0;
+      font-size: 1.2rem;
+      color: color($colors, semidark);
+    }
+  }
+
+  .user-travels {
+    background: color($colors, light);
+
+    ion-item-divider {
+      ion-label {
+        margin-bottom: 0;
+      }
+    }
+  
+  }
+}

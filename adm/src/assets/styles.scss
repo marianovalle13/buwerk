@@ -1,0 +1,219 @@
+//Variables
+@import "_variables.scss";
+@import "_ng2-toastr.scss"; //Fix Toastr
+
+//Font
+// @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600');
+
+//Configs
+
+// HTML Elements
+body, html {
+  // font-family: 'Roboto';
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 400;
+  color: $darkgray;
+}
+h3 {
+  font-size: 1.2em;
+}
+a {
+  color: $primary;
+}
+.breadcrumb {
+  background: none;
+  border-bottom: 1px solid gray;
+  margin-bottom: 1em;
+}
+.btn {
+  &.btn-primary {
+    &.outline {
+      border: 1px solid $primary;
+      background: none!important;
+      color: $primary!important;
+      border-radius: 0;
+      &:hover {
+        background: $primary!important;
+        color: $lightgray!important;
+      }
+    }
+  }
+  &.btn-secondary {
+    &.outline {
+      border: 1px solid $secondary;
+      background: none!important;
+      color: $secondary!important;
+      border-radius: 0;
+      &:hover {
+        background: $secondary!important;
+        color: $lightgray!important;
+      }
+    }
+  }
+}
+// Image Grid
+.img-grid {
+  .card {
+    .card-img-overlay {
+      padding: 0;
+      padding-left: .5rem;
+      padding-top: .5rem;
+      background: rgba(0,0,0,0.5);
+      top: inherit;
+    }
+    h5 {
+      font-size: 0.9rem
+    }
+  }
+}
+
+//Form Validation
+form {
+  .ng-invalid.ng-touched { //.is-invalid
+    border: 1px solid red;
+  }
+  .ng-valid.ng-touched {
+    border: 1px solid green;
+  }
+  .invalid-feedback {
+    display: block;
+    color: red;
+  }
+}
+// Cards
+.card-primary {
+  background-color: $primary;
+  border-color: $primary;
+  .card-block {
+    color: $white;
+    a {
+      color: $lightgray;
+      font-weight: 300;
+    }
+    a:hover {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+}
+.card-secondary {
+  background-color: $secondary;
+  border-color: $secondary;
+  .card-block {
+    color: $white;
+    a {
+      color: $lightgray;
+      font-weight: 300;
+    }
+    a:hover {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+}
+.topbar {
+  background: $darkgray;
+  color: $mediumgray;
+  line-height: 2.5em;
+  vertical-align: middle;
+  a {
+    color: $mediumgray;
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+.header {
+  margin: 1em 0;
+  width: 100%;
+  .nav {
+    button {
+      margin: 0.2em
+    }
+  }
+  .subtitulo {
+    font-style: italic;
+    color: $primary;
+    margin-top: 0.5em;
+  }
+}
+.sideNav {
+  .nav {
+    background: none;
+    .nav-item {
+      margin-bottom: 0.4em;
+      .nav-link {
+        color: $primary!important;
+        //border: 2px solid $lightgray;
+        background: $lightgray!important;
+        &.active {
+          background: $primary!important;
+          color: white!important;
+        }
+      }
+    }
+  }
+}
+.sidebar {
+  background: $darkgray;
+  padding-right: 0;
+  border-bottom: 20px solid $primary;
+  .nav {
+    width: 100%;
+    .nav-item {
+      .nav-link {
+        color: $mediumgray!important;
+        &.active {
+          background: $primary!important;
+          color: white!important;
+        }
+      }
+    }
+  }
+}
+.section-title {
+  margin: 1em 0;
+}
+.footer {
+  margin-top: 1em;
+  .redesSociales {
+    background-color: $primary;
+    //height: 5em;
+    i {
+      font-size: 2em;
+      color:$white;
+      margin: 0.5em;
+    }
+    h3 {
+      color:$white;
+    }
+  }
+  .links {
+    background-color: $darkgray;
+    height: auto;
+    padding-top: 1em;
+    h3 {
+      color: $primary;
+    }
+    ul {
+      li {
+        list-style-type: none;
+        list-style-position: outside;
+        color: $lightgray;
+      }
+    }
+  }
+}
+
+//Image Upload
+.my-drop-zone {
+  border: dotted 3px lightgray;
+}
+.nv-file-over {
+  border: dotted 3px red;
+} /* Default class applied to drop zones on over */
+.another-file-over-class {
+  border: dotted 3px green;
+}

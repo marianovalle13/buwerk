@@ -1,0 +1,45 @@
+
+<ion-content>
+  <ion-grid class="profile-grid" no-padding>
+    <ion-row>
+      <ion-col col-12>
+        <img height="100%" width="100%" class="atraction-img" src="assets/imgs/dark.jpg"
+          />
+      </ion-col>
+    </ion-row>
+    <ion-row padding-bottom>
+      <ion-col col-auto *ngIf="user">
+        <!-- <img class="profile-img" src="assets/imgs/{{ user.image }}" onerror="this.src='assets/imgs/avatar.png';" /> -->
+        <img [src]="getImage(user.image)" class="profile-img" onError="this.src='assets/imgs/avatar.png'">
+      </ion-col>
+      <ion-col class="profile-detail" *ngIf="user">
+        <h5>{{ user.name }}</h5>
+
+      </ion-col>
+    </ion-row>
+
+      <ion-list padding-left>
+        <ion-item (click)="goToLocations()">
+          <ion-label>Tu ubicación activa: {{ activeLocation }}</ion-label>
+          <ion-icon color="secondary" name="pin" item-left></ion-icon>
+        </ion-item>
+        <ion-item (click)="goToProfile()">
+          <ion-label>Editar Perfil</ion-label>
+          <ion-icon color="secondary" name="contact" item-left></ion-icon>
+        </ion-item>
+        <ion-item (click)="goToRequests()">
+          <ion-label>Solicitudes</ion-label>
+          <ion-icon color="secondary" name="mail-open" item-left></ion-icon>
+        </ion-item>
+        <ion-item (click)="logOut()">
+          <ion-label>Cerrar Sesión</ion-label>
+          <ion-icon color="secondary" name="power" item-left></ion-icon>
+        </ion-item>
+      </ion-list>
+
+
+  </ion-grid>
+
+
+
+</ion-content>

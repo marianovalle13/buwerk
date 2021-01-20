@@ -1,0 +1,7 @@
+<ion-list>
+  <button [ngClass]="{'active': !filterSelected}" ion-item (click)="close()">Todos</button>
+
+    <button [ngClass]="{'active': item.selected}" *ngFor="let item of categories" ion-item
+      (click)="close(item)">{{item}}</button>
+
+</ion-list>

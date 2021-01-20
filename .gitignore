@@ -1,0 +1,7 @@
+app/.sourcemaps/
+api/node_modules/
+app/node_modules/
+app/www/
+app/platforms/
+app/plugins/
+app/package-lock.json

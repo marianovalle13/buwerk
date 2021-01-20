@@ -1,0 +1,78 @@
+// Aplicar clase en <form>
+// Fondos transparentes, espaciados, etc..
+// Ideal para forms en fondos oscuros
+
+.cool-form {
+    .list-ios > .item-block:first-child {
+        border-top: none;
+    }
+
+    .list-ios > .item-block:last-child {
+        border-bottom: none;
+    }
+
+    .item {
+        background: rgba($color: #FFFFFF, $alpha: 0.1);
+        color: white;
+        margin-bottom: .4em;
+        padding-left: 0;
+        border-radius: 0px;
+
+        .item-inner {
+            //border-bottom: none;
+            padding-left: 1em;
+        }
+
+        .label {
+            color: white;
+        }
+
+        .radio-icon {
+            border-color: white;
+        }
+
+        .select-icon-inner {
+            color: white;
+        }
+
+        &.transparent {
+            background: transparent;
+        }
+
+        p {
+            color: white;
+        }
+
+        .text-input::-webkit-input-placeholder {
+            opacity: .3;
+            color: white;
+        }
+    }
+
+    .list-header {
+        background: transparent; //border-bottom: 1px solid white;
+        border-top: none;
+        padding-left: 0;
+
+        .icon {
+            opacity: .5;
+        }
+
+        .label {
+            text-align: left;
+            font-weight: bold;
+            opacity: .5;
+        }
+
+        .item-inner {
+            //margin-left: 0.5em !important;
+        }
+
+        &.list-header-ios {
+            border-bottom: none;
+        }
+    }
+    .separator {
+        height: 1em;
+    }
+}

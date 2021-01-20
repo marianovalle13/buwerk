@@ -1,0 +1,64 @@
+<h4 class="section-title">Notificaciones</h4>
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a [routerLink]="['/notifications']">Notificaciones</a>
+  </li>
+  <li class="breadcrumb-item active">Nueva Notificación</li>
+</ol>
+<div class="container-fluid">
+  <form class="w-100 pt-3" [formGroup]="formObject" (ngSubmit)="logForm(formObject.value)">
+    <div class="row">
+      <div class="col-sm-7">
+        
+          <div class="form-group">
+            <label for="name">Título</label>
+            <input class="form-control" type="text" id="name" formControlName="title" />
+          </div>
+          <div class="form-group">
+            <label for="">Mensaje</label>
+            <textarea class="form-control" name="message" id="message" rows="3" formControlName="message"></textarea>
+          </div>
+
+          <button class="btn btn-primary mb-4 float-right" type="button" block [disabled]="!formObject.valid"
+            (click)="logForm(formObject.value)">
+            <i class="fa fa-paper-plane-o" aria-hidden="true"></i> ENVIAR
+          </button>
+        
+      </div>
+      <div class="col-sm-5">
+
+        <div class="row">
+          <div class="col-sm-6">
+            <input type="checkbox" class="btn my-2" (change)="selectAll($event)" >
+            Seleccionar Registrados
+          </div>
+          <div class="col-sm-6">
+            <input type="checkbox" class="btn my-2" (change)="notifyAll($event)">
+            Notificar a todos los usuarios
+          </div>
+        </div>
+
+        <ul class="list-group">
+
+          <li class="list-group-item" *ngFor="let user of registered">
+            <!--  for="user.id" -->
+            <div class="form-check">
+              <!-- id="user.id" -->
+              <input class="form-check-input" [checked]="checkedUsers" formControlName="directedTo" (change)="checkValue($event, user)" type="checkbox">
+
+              <label class="form-check-label ml-4">
+                {{ user.firstName }}
+              </label>
+              <label class="form-check-label ml-4">
+                {{user.lastName}}
+              </label>
+
+            </div>
+          </li>
+
+        </ul>
+      
+      </div>
+    </div>
+  </form>
+</div>

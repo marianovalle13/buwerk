@@ -1,0 +1,22 @@
+import mongoose from 'mongoose'
+import Debug from 'debug'
+import settings from './config/settings'
+import {app, server} from './app'
+const debug = new Debug('api/index.js')
+mongoose.plugin(require('meanie-mongoose-to-json'));
+
+async function start()  {
+  try {
+    await mongoose.connect('mongodb://' + settings.database.host + '/' + settings.database.name, { useNewUrlParser: true });
+  } catch (e) {
+    debug(e)
+  } finally {
+    app.listen(settings.port, () => {
+      debug(`servidor corriendo en puerto ${settings.port}`)
+    })
+    server.listen(process.env.SOCKET_PORT || 10089)
+  }
+
+}
+
+start()

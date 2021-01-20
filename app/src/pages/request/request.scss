@@ -1,0 +1,107 @@
+page-request {
+    .colorHogar {
+        color: color($colors, warning);
+    }
+
+    .colorMantenimiento {
+        color: color($colors, secondary);
+    }
+
+    .colorJardinería {
+        color: color($colors, success);
+    }
+
+    .colorCuidados {
+        color: color($colors, pink);
+    }
+
+    .colorHogarButton {
+        background-color: color($colors, warning);
+        color: color($colors, dark) !important;
+    }
+
+    .colorMantenimientoButton {
+        background-color: color($colors, secondary);
+    }
+
+    .colorJardineríaButton {
+        background-color: color($colors, success);
+    }
+
+    .colorCuidadosButton {
+        background-color: color($colors, pink);
+    }
+
+    .content {
+        background: color($colors, primary);
+
+        .profile-pic {
+            z-index: 100;
+            border-radius: 50%;
+            height: 5rem;
+            width: 5rem;
+            object-fit: cover;
+            margin-left: 0rem;
+        }
+
+        .title-grid {
+            height: 10vh;
+            display: flex;
+            align-items: center;
+            flex-direction: inherit;
+
+            text {
+                color: white;
+            }
+
+            .row {
+                width: 100%;
+                opacity: 0.5;
+
+                h2 {
+                    color: white;
+                    font-weight: bold;
+                }
+
+                p {
+                    color: white;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    .list-header {
+        color: color($colors, primary);
+        font-size: 1.2em;
+
+        //font-weight: bold;
+        margin-bottom: 0;
+    }
+
+    .button-class {
+        border-radius: 30px;
+        height: 50px;
+    }
+
+    .button-solicitud {
+        border-radius: 30px;
+        overflow: hidden;
+        height: 2rem;
+        width: 70%;
+        font-size: 1.2rem;
+        font-weight: 500;
+        padding: 2.5rem;
+
+        // text-transform: uppercase;
+   
+    }
+
+    .button-comment {
+        border-radius: 25px;
+        overflow: hidden;
+        height: 2rem;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+}

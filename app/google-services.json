@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "90537643578",
+    "firebase_url": "https://buwerk-fedd9.firebaseio.com",
+    "project_id": "buwerk-fedd9",
+    "storage_bucket": "buwerk-fedd9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:90537643578:android:82be8f662b9148498aef03",
+        "android_client_info": {
+          "package_name": "com.diproach.buwerk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "90537643578-nlqv1tkcps0kdbmlh3t8h55mkv38nfje.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATJBV6MHEvN4kw4IWhJjm2rTObX_5Y8Uc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "90537643578-nlqv1tkcps0kdbmlh3t8h55mkv38nfje.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

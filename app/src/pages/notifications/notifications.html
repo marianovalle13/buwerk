@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-center>
+      Notificaciones
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item text-wrap *ngFor="let item of notifications">
+      <h2>{{item.title}}</h2>
+      <p margin-top margin-bottom>{{item.message}}</p>
+      <span class="date">{{item.timestamp | date:'dd/MM/yyyy'}}</span>
+    </ion-item>
+  </ion-list>
+</ion-content>

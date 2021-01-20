@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-center>
+      <img src="assets/imgs/logo.png" alt="">
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="articles-grid">
+    <ion-row>
+
+      <ion-col col-6 *ngFor="let item of articles" (click)="showArticle(item)">
+        <div class="article-container" [ngStyle]="{'background': getBackground(item)}" [ngStyle]="{'background-size': 'cover'}">
+          <!-- <div *ngIf="item.price && item.price != 0" class="price-container">
+            ${{item.price}}
+          </div> -->
+          <div class="top-icons" *ngIf="user">
+            <button ion-button clear *ngIf="item.liked">
+              <ion-icon color="primary" name="heart"></ion-icon>
+            </button>
+            <button ion-button clear *ngIf="!item.liked" click="like()">
+              <p>{{ item.like.length }}</p>
+              <ion-icon color="primary" name="heart-outline"></ion-icon>
+            </button>
+
+          </div>
+
+          <ion-grid class="article-content">
+            <ion-row>
+              <ion-col col-12 class="article-title">
+                <h3>{{item.title}}</h3>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col col-9 text-left class="article-category">
+                <span>{{category[item.category]}}</span>
+              </ion-col>
+              <ion-col class="article-lock" col-3 text-right>
+                <ion-icon *ngIf="item.locked" name="lock"></ion-icon>
+                <!-- <ion-icon *ngIf="!item.locked" name="unlock"></ion-icon> -->
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+        </div>
+      </ion-col>
+      
+    </ion-row>
+  </ion-grid>
+</ion-content>

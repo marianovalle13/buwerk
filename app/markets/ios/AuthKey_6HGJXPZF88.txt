@@ -1,0 +1,3 @@
+Name:FIREBASE KEYS
+Key ID:6HGJXPZF88
+Services:Apple Push Notifications service (APNs), DeviceCheck

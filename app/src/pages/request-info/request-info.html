@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-left>
+      Prestador
+    </ion-title>
+  </ion-navbar>
+  
+ 
+  <!-- TODO CHANGE ICONS -->
+  <!-- <ion-toolbar text-center class="class-toolbar-pending" *ngIf="service.status == 'Pendiente'"> -->
+  <ion-toolbar text-center class="class-toolbar-pending" *ngIf="service.status == 'Pendiente'">
+    <h4 class="text-toolbar" ><ion-icon name="time" class="icon-space"></ion-icon>Pendiente</h4>
+  </ion-toolbar>
+
+  <ion-toolbar text-center class="class-toolbar-confirmed" *ngIf="service.status == 'Confirmado'">
+    <h4 class="text-toolbar" ><ion-icon name="checkmark" class="icon-space"></ion-icon>Confirmado</h4>
+  </ion-toolbar>
+
+  <ion-toolbar text-center class="class-toolbar-rejected" *ngIf="service.status == 'Rechazado'">
+    <h4 class="text-toolbar" ><ion-icon name="close" class="icon-space"></ion-icon>Rechazado</h4>
+  </ion-toolbar>
+
+  <ion-toolbar text-center class="class-toolbar-finished" *ngIf="service.status == 'Terminado'">
+    <h4 class="text-toolbar" ><ion-icon name="done-all" class="icon-space"></ion-icon>Terminado</h4>
+  </ion-toolbar>
+
+</ion-header>
+
+<!-- [ngStyle]="{'background': getBackground(item)}" -->
+<!-- [ngStyle]="{'background-size': 'cover'}" -->
+<ion-content>
+
+  <ion-grid class="img-container" no-padding>
+    <ion-row>
+      <ion-col  col-12 text-center>
+        <!-- <img class="image" src="assets/imgs/{{ service.profesional.image }}" onerror="this.src='assets/imgs/avatar.png';" /> -->
+        <img [src]="getImage(service.profesional.image)" class="image" onError="this.src='assets/imgs/avatar.png'">
+        <ion-col col-3>
+          
+        </ion-col>
+        <ion-col col-12 text-center>
+          <h4 class="text">{{ service.profesional.name }}</h4>
+          <p>{{ service.profesional.shortDesc }}</p>
+          <ion-col col-12 class="stars" text-center *ngIf="service.status == 'Terminado'">
+            <ion-icon [ngStyle]="{color: (rate >= 1) ? 'orange' : 'gray'}" name="star" (click)="rateProfesional(1)"></ion-icon>
+            <ion-icon [ngStyle]="{color: (rate >= 2) ? 'orange' : 'gray'}" name="star" (click)="rateProfesional(2)"></ion-icon>
+            <ion-icon [ngStyle]="{color: (rate >= 3) ? 'orange' : 'gray'}" name="star" (click)="rateProfesional(3)"></ion-icon>
+            <ion-icon [ngStyle]="{color: (rate >= 4) ? 'orange' : 'gray'}" name="star" (click)="rateProfesional(4)"></ion-icon>
+            <ion-icon [ngStyle]="{color: (rate >= 5) ? 'orange' : 'gray'}" name="star" (click)="rateProfesional(5)"></ion-icon>
+          </ion-col>
+        </ion-col>
+            
+        <ion-col col-3>
+        
+        </ion-col>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-card class="card">
+          <!-- <ion-card-header color="light" text-center>
+            Contadora
+          </ion-card-header> -->
+          <ion-card-content>
+            {{ service.profesional.desc }}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row text-center>
+      <ion-col col-12 text-center class="text-schedule">
+        <h2><ion-icon name="clock" class="icon-space"></ion-icon>{{ service.requiredDate }} {{ service.requiredTime }} </h2>
+      </ion-col>
+    </ion-row>    
+  </ion-grid>
+</ion-content>
+
+<ion-footer *ngIf="service.status == 'Pendiente' || service.status == 'Confirmado'">
+  <ion-grid>
+    <ion-row padding>
+      <ion-col col-12 text-center>
+        <button (click)="cancelService()" ion-button color="danger" class="button-solicitud">
+          RECHAZAR
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

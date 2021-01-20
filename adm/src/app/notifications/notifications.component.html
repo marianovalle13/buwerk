@@ -1,0 +1,33 @@
+<div class="container-fluid">
+
+  <div class="row align-items-center">
+    <div class="col-sm-6">
+      <h1 class="section-title">
+        <i class="fa fa-book"></i> Lista de Notificaciones</h1>
+    </div>
+    <div class="col-sm-6 text-right">
+      <button type="button" class="btn btn-primary ml-2" (click)="create()">
+        <i class="fa fa-plus"></i> NUEVA NOTIFICACIÓN</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th width="10%">Fecha</th>
+          <th>Título</th>
+          <th>Mensaje</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items">
+          <td>{{ item.timestamp | date:'dd/MM/yyyy' }}</td>
+          <td>{{ item.title }}</td>
+          <td>{{ item.message }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

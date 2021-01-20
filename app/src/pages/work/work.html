@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-center>
+      <img src="assets/imgs/logo.png" alt="">
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+
+  <ion-list class="product-list">
+  <!-- <ion-item >
+    <label>Usuario 1</label>
+    <ion-row>
+      <ion-col col-8>
+        <p>Miércoles 10:30hs</p>
+      </ion-col>
+      <ion-col text-right col-4>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+  
+      </ion-col>
+      <ion-col text-right class="text-confirmation" padding-top>
+        Confirmada
+      </ion-col>
+  
+    </ion-row>
+  <img class="product-style" src="assets/imgs/profile.png" onerror="this.src='assets/imgs/logo_transp.png';" item-left />
+  </ion-item> -->
+  <!-- <ion-item> 
+    <ion-avatar item-left>
+      <img class="product-style" src="assets/imgs/man.png" onerror="this.src='assets/imgs/logo_transp.png';" />
+    </ion-avatar>
+    <h2>Usuario 1</h2>
+    <p>Miércoles 10:30hs</p>
+    <ion-note item-end class="text-confirmation">
+      Confirmada
+    </ion-note> 
+  </ion-item> -->
+
+  <ion-item no-lines text-center *ngIf="items.length == 0">
+    <span ion-text color="gray">
+      <ion-icon name="color-fill" margin-right></ion-icon>
+      No hay solicitudes...
+    </span>
+  </ion-item>
+  
+  <div *ngFor="let item of items">
+
+    <ion-item (click)="goToWorkStatus(item)">
+      <ion-avatar item-left>
+        <!-- <img class="product-style" src="assets/imgs/{{ item.user.image }}" onerror="this.src='assets/imgs/avatar.png';" /> -->
+        <img [src]="getImage(item.user.image)" class="product-style" onError="this.src='assets/imgs/avatar.png'">
+      </ion-avatar>
+      <h2>{{ item.user.name }}</h2>
+      <p>{{ item.requiredDate }} {{ item.requiredTime }}</p>
+      <ion-note item-end
+        [ngClass]="{'text-finish': item.status =='Terminado', 'text-pending': item.status =='Pendiente', 'text-confirmation': item.status =='Confirmado', 'text-rejected': item.status =='Rechazado'}">
+        {{ item.status }}
+      </ion-note>
+    </ion-item>
+
+  </div>
+
+  </ion-list>
+
+</ion-content>

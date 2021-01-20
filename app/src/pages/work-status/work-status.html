@@ -1,0 +1,112 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-left>
+      Solicitud
+    </ion-title>
+  </ion-navbar>
+
+
+  <ion-toolbar text-center class="class-toolbar-pending" *ngIf="item.status == 'Pendiente'">
+      <h4 class="text-toolbar" ><ion-icon name="time" class="icon-space"></ion-icon>Pendiente</h4>
+    </ion-toolbar>
+  
+    <ion-toolbar text-center class="class-toolbar-confirmed" *ngIf="item.status == 'Confirmado'">
+      <h4 class="text-toolbar" ><ion-icon name="checkmark" class="icon-space"></ion-icon>Confirmado</h4>
+    </ion-toolbar>
+  
+    <ion-toolbar text-center class="class-toolbar-rejected" *ngIf="item.status == 'Rechazado'">
+      <h4 class="text-toolbar" ><ion-icon name="close" class="icon-space"></ion-icon>Rechazado</h4>
+    </ion-toolbar>
+  
+    <ion-toolbar text-center class="class-toolbar-finished" *ngIf="item.status == 'Terminado'">
+      <h4 class="text-toolbar" ><ion-icon name="done-all" class="icon-space"></ion-icon>Terminado</h4>
+    </ion-toolbar>
+  
+
+</ion-header>
+
+<!-- [ngStyle]="{'background': getBackground(item)}" -->
+<!-- [ngStyle]="{'background-size': 'cover'}" -->
+<ion-content *ngIf="item">
+
+  <ion-grid class="img-container" no-padding>
+    <ion-row>
+      <ion-col  col-12 text-center>
+        <!-- <img class="image" src="assets/imgs/{{ item.user.image }}" onerror="this.src='assets/imgs/avatar.png';"> -->
+        <img [src]="getImage(item.user.image)" class="image" onError="this.src='assets/imgs/avatar.png'">
+        <ion-col col-3>
+          
+        </ion-col>
+        <ion-col col-12 text-center>
+          <h4 class="text">{{ item.user.name }}</h4>
+        </ion-col>
+            
+        <ion-col col-3>
+        
+        </ion-col>
+      </ion-col>
+    </ion-row>
+
+    <ion-row (click)="showMap()">
+      <ion-col>
+        <ion-card class="card" justify-content-center>
+          <ion-card-header color="light" text-center>
+              <!-- <ion-icon name="map"></ion-icon> {{ item.address }} -->
+              <ion-row justify-content-center>
+                {{ item.address }}
+              </ion-row>
+              <ion-row justify-content-center>
+                <button ion-button class="home-style" color="white">
+                    <ion-icon name="map" class="icon-space"></ion-icon> Ver mapa
+                </button>
+              </ion-row>
+
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row text-center>
+      <ion-col col-12 text-center class="text-schedule">
+        <h2><ion-icon name="clock" class="icon-space"></ion-icon>{{ item.requiredDate }} {{ item.requiredTime }}</h2>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+
+<ion-footer *ngIf="item.status == 'Pendiente'">
+  <ion-grid>
+    <ion-row padding>
+      <ion-col col-6 text-center >
+        <button ion-button color="danger" class="button-solicitud" (click)="serviceStatus('Rechazado')">
+          RECHAZAR
+        </button>
+      </ion-col>
+      <ion-col col-6 text-center>
+        <button ion-button color="success" class="button-accept" (click)="serviceStatus('Confirmado')">
+          ACEPTAR
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
+
+
+<ion-footer *ngIf="item.status == 'Confirmado'">
+  <ion-grid>
+    <ion-row padding>
+      <ion-col col-6 text-center>
+        <button (click)="serviceStatus('Rechazado')" ion-button color="danger" class="button-solicitud">
+          RECHAZAR
+        </button>
+      </ion-col>
+      <ion-col col-6 text-center>
+        <button (click)="serviceStatus('Terminado')" ion-button color="secondary" class="button-solicitud">
+          REALIZADO
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

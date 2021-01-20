@@ -1,0 +1,7 @@
+{
+  "name": "buwerk",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

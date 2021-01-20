@@ -1,0 +1,182 @@
+@import "../../theme/variables.scss";
+
+page-service {
+    .img-container {
+        // overflow: hidden;
+        // height: 40vh;
+        //height: 100%;
+        //width: 100%;
+
+        // width: 40vh;
+        //position: absolute;
+        //z-index: 100;
+
+        .text {
+            color: rgb(255, 255, 255);
+            margin-bottom: 1.6rem;
+        }
+
+        .image {
+            padding: 3rem;
+            border-radius: 50%;
+            height: 20rem;
+            width: 20rem;
+            object-fit: cover;
+
+            //    margin-left: 1rem;
+       
+        }
+
+        .colorHogar {
+            color: color($colors, warning);
+        }
+
+        .colorMantenimiento {
+            color: color($colors, secondary);
+        }
+
+        .colorJardinería {
+            color: color($colors, success);
+        }
+
+        .colorCuidados {
+            color: color($colors, pink);
+        }
+
+        .img-background-Hogar {
+            background: url(../assets/imgs/w.png) no-repeat top center, linear-gradient(to bottom, color($colors, warning) 0%, #191919 100%);
+            background-size: contain;
+            background-blend-mode: multiply;
+        }
+
+        .img-background-Mantenimiento {
+            background: url(../assets/imgs/w.png) no-repeat top center, linear-gradient(to bottom, color($colors, secondary) 0%, #191919 100%);
+            background-size: contain;
+            background-blend-mode: multiply;
+        }
+
+        .img-background-Jardinería {
+            background: url(../assets/imgs/w.png) no-repeat top center, linear-gradient(to bottom, color($colors, success) 0%, #191919 100%);
+            background-size: contain;
+            background-blend-mode: multiply;
+        }
+
+        .img-background-Cuidados {
+            background: url(../assets/imgs/w.png) no-repeat top center, linear-gradient(to bottom, color($colors, pink) 0%, #191919 100%);
+            background-size: contain;
+            background-blend-mode: multiply;
+        }
+
+        .services {
+            list-style-type: circle;
+            color: color($colors, light);
+        }
+
+        .home-style {
+            padding: 0.4em;
+            border-radius: 15px;
+            height: 20px;
+            width: 14em;
+            font-size: 1rem;
+        }
+
+        .card {
+            background-color: transparent;
+            border-color: white;
+            border-style: solid;
+            border-width: 1px;
+            color: white;
+        }
+
+        .button-comment {
+            border-radius: 25px;
+            overflow: hidden;
+            height: 2rem;
+            font-size: 1rem;
+            font-weight: 500;
+
+            // text-transform: uppercase;
+       
+        }
+
+        .button-solicitud {
+            border-radius: 30px;
+            overflow: hidden;
+            height: 2rem;
+            width: 70%;
+            font-size: 1.2rem;
+            font-weight: 500;
+            padding: 2.5rem;
+
+            // text-transform: uppercase;
+       
+        }
+
+        .stars {
+            ion-icon {
+                color: color($colors, gray);
+                padding: 0;
+                margin: 0.2rem;
+            }
+        }
+
+        .text-schedule {
+            font-size: 1.2rem;
+            color: color($colors, gray);
+        }
+
+        .text-price {
+            font-size: 1.8rem;
+            color: color($colors, white);
+        }
+    }
+
+    .button-solicitud {
+        border-radius: 30px;
+        overflow: hidden;
+        height: 2rem;
+        width: 70%;
+        font-size: 1.2rem;
+        font-weight: 500;
+        padding: 2.5rem;
+
+        // text-transform: uppercase;
+   
+    }
+
+    .colorHogarButton {
+        background-color: color($colors, warning) !important;
+        color: color($colors, dark) !important;
+    }
+
+    .colorMantenimientoButton {
+        background-color: color($colors, secondary) !important;
+    }
+
+    .colorJardineríaButton {
+        background-color: color($colors, success) !important;
+    }
+
+    .colorCuidadosButton {
+        background-color: color($colors, pink) !important;
+    }
+
+    ////
+
+    .name {
+        color: #DEDEDE;
+        font-weight: 500;
+        font-size: 1.5rem;
+    }
+
+    .time {
+        color: color($colors, semidark);
+        font-size: 1.1rem;
+        align-self: flex-end;
+    }
+
+    .message {
+        color: #ffffff;
+        font-size: 1.6rem;
+    }
+}

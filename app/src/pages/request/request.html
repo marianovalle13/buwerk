@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-left>
+      Solicitud
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <form class="cool-form" (ngSubmit)="submitRequest()" [formGroup]="form">
+  <ion-row>
+    <ion-col>
+      <ion-card class="card">
+        <ion-card-header 
+        [ngClass]="{'colorHogar': profesional.category=='Hogar', 'colorMantenimiento': profesional.category=='Mantenimiento', 'colorJardinería': profesional.category=='Jardinería', 'colorCuidados': profesional.category=='Cuidados personales'}">
+          Vas a solicitar a:
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <label>{{ profesional.name }}</label>
+            <p>{{ profesional.shortDesc }}</p>
+            <img item-left [src]="getImage(profesional.image)" class="profile-pic" onError="this.src='assets/imgs/avatar.png'">
+          </ion-item>
+        </ion-card-content>
+        <ion-card-header 
+        [ngClass]="{'colorHogar': profesional.category=='Hogar', 'colorMantenimiento': profesional.category=='Mantenimiento', 'colorJardinería': profesional.category=='Jardinería', 'colorCuidados': profesional.category=='Cuidados personales'}">
+          Seleccione día, hora:
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list >
+            <ion-item>
+              <!-- <ion-label stacked>Fecha:</ion-label> -->
+              <!-- <ion-input  placeholder="fecha..." type="date" formControlName="requiredDate"></ion-input>
+              <ion-icon color="light" name="calendar" item-end></ion-icon> -->
+              <ion-label>Seleccione Fecha</ion-label>
+              <ion-datetime displayFormat="DD/MM/YYYY" cancelText="CANCELAR" doneText="OK" formControlName="requiredDate"></ion-datetime>
+            </ion-item>
+            
+            <ion-item>
+              <!-- <ion-label stacked>Horario:</ion-label>
+              <ion-input placeholder="fecha..." type="time" formControlName="requiredTime"></ion-input> -->
+              <ion-label>Seleccione Hora</ion-label>
+              <ion-datetime displayFormat="HH:mm" cancelText="CANCELAR" doneText="OK" formControlName="requiredTime">
+              </ion-datetime>
+            </ion-item>
+          </ion-list>
+
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+
+  <ion-row padding>
+    <ion-col col-12 text-center>
+      <button ion-button class="button-solicitud" 
+      [ngClass]="{'colorHogarButton': profesional.category=='Hogar', 'colorMantenimientoButton': profesional.category=='Mantenimiento', 'colorJardineríaButton': profesional.category=='Jardinería', 'colorCuidadosButton': profesional.category=='Cuidados personales'}"
+      >
+        ENVIAR SOLICITUD
+      </button>
+    </ion-col>
+  </ion-row>
+
+  </form>
+
+</ion-content>

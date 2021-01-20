@@ -1,0 +1,12 @@
+<!--<router-outlet></router-outlet>-->
+<div class="container-fluid h-100" [style.min-height.px]="innerHeight">
+  <app-topmenu></app-topmenu>
+  <div class="row h-100">
+    <div class="col-2 collapse d-md-flex bg-dark pt-2 h-100 sidebar" id="sidebar" [style.min-height.px]="innerHeight">
+      <app-sidemenu></app-sidemenu>
+    </div>
+    <div class="col-10 pt-2">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

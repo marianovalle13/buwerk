@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentActionSheet()">
+        <ion-icon name="information-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-item class="header-avatar">
+      <ion-avatar item-left>
+        <!-- <img src="assets/imgs/secretaria.jpg" onError="this.src='assets/imgs/avatar.png'"> -->
+        <img [src]="getImage(item.image)" onError="this.src='assets/imgs/avatar.png'" >
+      </ion-avatar>
+      <h2 ion-text color="white">
+      {{item.name}}
+      </h2>
+    </ion-item>
+  </ion-navbar>
+  <div *ngIf="improper" class="chat-improper"> 
+    <p style="margin: 0; padding: 0;">Chat marcado como impropio</p>
+  </div>
+</ion-header>
+
+<ion-content padding>
+  <!-- <div class="messages">
+    <div class="message" class='slide-left'>
+      <span>Hola, que necesita? <small class="small-msg">hace 4 minutos</small></span>
+    </div>    
+  </div>
+  <div class="messages other">
+    <div class="message" >
+      <span>Hola, que tal? necesito acomodar mis facturas de la fecha 2011 hasta la actualidad <small class="small-msg">hace
+          1 minuto</small></span>
+    </div>
+  </div> -->
+  <div *ngFor="let message of messages">
+    <div *ngIf="message.side == 'left'" class="message" class='slide-left'>
+        <div class="message">
+        <span>
+          {{message.body}} 
+          <small class="small-msg">{{message.time}}</small>
+        </span>
+      </div>    
+    </div>
+
+    <div *ngIf="message.side == 'right'" class="messages other">
+      <div class="message" >
+        <span>
+          {{message.body}}
+          <small class="small-msg">{{message.time}}</small>
+        </span>
+      </div>
+    </div>
+
+    <div *ngIf="message.side == 'center'" class="messages adm">
+      <div class="message" >
+        <span>
+          {{message.body}}
+          <small class="small-msg">{{message.time}}</small>
+        </span>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <form class="cool-form" (ngSubmit)="sendMessage()" [formGroup]="form">
+  <ion-toolbar>
+
+    <ion-item>
+      <ion-label style="margin:0px;"></ion-label>
+      <div item-content style="width:100%;">
+        <ion-input type="text" placeholder="Escribe un Mensaje" formControlName="message" [disabled]="isAvailable" ></ion-input>
+        <!-- <ion-input type="text" placeholder="Escribe un Mensaje" ></ion-input> -->
+      </div>
+    </ion-item>
+
+    <ion-buttons right>
+      <button class="send-btn" ion-button clear>
+        Enviar&nbsp;
+        <ion-icon name="send"></ion-icon>
+      </button>
+    </ion-buttons>
+      
+    </ion-toolbar>
+  </form>
+  </ion-footer>

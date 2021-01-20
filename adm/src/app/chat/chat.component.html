@@ -1,0 +1,60 @@
+<div class="container-fluid">
+  <div class="row align-items-center">
+  <div class="col-sm-6">
+    <h1 class="section-title">
+      <i class="fa fa-comments text-primary"></i> Mensajes </h1>
+  </div>
+  <div class="col-sm-6 text-right">
+    <button type="button" class="btn btn-primary ml-2" (click)="open(content, 'asd')">
+      <i class="fa fa-plus"></i> MANDAR MENSAJE</button>
+  </div>
+  </div>
+</div>
+
+<div class="row">
+  <table class="table">
+    <thead>
+      <tr>
+        <th width="80%">Mensaje</th>
+        <th>Correspondiente</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="loading" class="text-center">
+        <td colspan="5">
+          <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+          Cargando mensajes...
+        </td>
+      </tr>
+      <tr *ngFor="let item of messages">
+        <td>{{ item.body }}</td>
+        <td class="" *ngIf="item.author == 'user'">Usuario</td>
+        <td class="text-primary" *ngIf="item.author == 'profesional'">Profesional</td>
+        <td class="text-danger" *ngIf="item.author == 'adm'">Administrador</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<ng-template #content let-d="dismiss">
+  <div class="modal-header">
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div style="text-align:center">
+      <form [formGroup]="formObject" (ngSubmit)="logForm(formObject.value)" novalidate>
+        <div class="form-group text-left">
+          <label for="message">Mensaje</label>
+          <input class="form-control" id="message" formControlName="message" placeholder="Nuevo mensaje">
+        </div>
+        <p>&nbsp;</p>
+        <button [disabled]="!formObject.valid" type="submit" class="btn btn-primary btn-block">ENVIAR</button>
+      </form>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+
+</ng-template>

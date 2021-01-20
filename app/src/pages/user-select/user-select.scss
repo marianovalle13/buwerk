@@ -1,0 +1,38 @@
+page-user-select {
+    .content {
+        background: color($colors, primary);
+
+        .logo-container {
+            height: 35vh;
+            display: flex;
+            align-items: center;
+            flex-direction: inherit;
+
+            div {
+                width: 100%;
+            }
+        }
+
+        .header-md::after{
+            background-image: none;
+        }
+
+        .button-container {
+            height: 50vh;
+            display: flex;
+            align-items: flex-end;
+            flex-direction: initial;
+            border-radius: 20px;
+            
+            
+            .button-class {
+                border-radius: 30px;
+                height: 50px;
+            }
+
+            div {
+                width: 100%;
+            }
+        }
+    }
+}

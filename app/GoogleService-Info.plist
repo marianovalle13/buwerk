@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>90537643578-k4b2uob2ee690nqgj9hiu9qk14p8ejn8.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.90537643578-k4b2uob2ee690nqgj9hiu9qk14p8ejn8</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAd1u6cxklYDXEF-19G1W7ZJauDQ_W4kfI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>90537643578</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.diproach.buwerk</string>
+	<key>PROJECT_ID</key>
+	<string>buwerk-fedd9</string>
+	<key>STORAGE_BUCKET</key>
+	<string>buwerk-fedd9.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:90537643578:ios:d990db6732249f478aef03</string>
+	<key>DATABASE_URL</key>
+	<string>https://buwerk-fedd9.firebaseio.com</string>
+</dict>
+</plist>

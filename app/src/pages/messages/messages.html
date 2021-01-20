@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-navbar> 
+    <ion-title text-center>
+      <img src="assets/imgs/logo.png" alt="">
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list *ngIf="type == 'user'" class="product-list">
+    
+    <ion-item no-lines text-center *ngIf="conversations.length == 0">
+      <span ion-text color="gray">
+        <ion-icon name="color-fill" margin-right></ion-icon>
+        No hay conversaciones...
+      </span>
+    </ion-item>
+    
+
+    <ion-item *ngFor="let item of conversations" (click)="goToChat(item.profesional, item.id)" >
+      <h3>{{item.profesional.name}}</h3>
+      <!-- <p>24/10/2019</p>
+      <p>
+        <ion-icon name="text" class="icon-space"></ion-icon> tienes 4 mensajes
+      </p> -->
+      <button *ngIf="item.profesional.category === 'Hogar'" ion-button outline item-end color="warning" class="button-comment">
+        HOGAR
+      </button>
+      <button *ngIf="item.profesional.category === 'Mantenimiento'" ion-button outline item-end color="secondary" class="button-comment">
+        MANTENIMIENTO
+      </button>
+      <button *ngIf="item.profesional.category === 'Jardinería'" ion-button outline item-end color="success" class="button-comment">
+        JARDINERÍA
+      </button>
+      <button *ngIf="item.profesional.category === 'Cuidados personales'" ion-button outline item-end color="pink" class="button-comment">
+        CUIDADOS PERSONALES
+      </button>
+      <!-- <img class="product-style" src="assets/imgs/secretaria.jpg" item-left /> -->
+      <img [src]="getImage(item.profesional.image)" class="product-style" onError="this.src='assets/imgs/avatar.png'" item-left>
+
+    </ion-item>
+    
+  </ion-list>
+
+  <ion-list *ngIf="type == 'profesional'" class="product-list">
+
+    <ion-item no-lines text-center *ngIf="conversations.length == 0">
+      <span ion-text color="gray">
+        <ion-icon name="color-fill" margin-right></ion-icon>
+        No hay conversaciones...
+      </span>
+    </ion-item>
+
+    <ion-item *ngFor="let item of conversations" (click)="goToChat(item.user, item.id)" >
+      <h3>{{item.user.name}}</h3>
+      <!-- <p>24/10/2019</p> -->
+      <!-- <p>
+        <ion-icon name="text" class="icon-space"></ion-icon> tienes 4 mensajes
+      </p> -->
+
+      <img [src]="getImage(item.user.image)" class="product-style" onError="this.src='assets/imgs/avatar.png'" item-left>
+
+
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,54 @@
+page-messages {
+    .header {
+        .toolbar {
+            img {
+                max-width: 150px;
+            }
+        }
+
+        .toolbar-content {
+            .searchbar-input {
+                border-radius: 40px;
+            }
+        }
+    }
+
+      .button-comment {
+    border-radius: 25px;
+    overflow: hidden;
+    height: 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+
+      }
+
+
+      .button-personal {
+    border-radius: 25px;
+    overflow: hidden;
+    height: 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    // background: rgb(247, 123, 144);
+
+      }
+
+      
+    .product-style {
+    z-index: 100;
+    border-radius: 50%;
+    height: 5rem;
+    width: 5rem;
+    object-fit: cover;
+    margin-left: 0rem;
+  }
+       
+    .product-list {
+            // padding: 0em 0em;
+            height: 30px;
+            font-size: 1rem;
+        }
+     }
+                    
+  
+    

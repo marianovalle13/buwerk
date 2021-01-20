@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left (click)="showMap($event)">
+      <button ion-button icon-only>
+        <ion-icon name="map"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentPopover($event)">
+        <ion-icon name="options"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-center>
+      <img src="assets/imgs/logo.png" alt="">
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list class="product-list">
+
+    <ion-item no-lines text-center *ngIf="items.length == 0">
+      <span ion-text color="gray">
+        <ion-icon name="color-fill" margin-right></ion-icon>
+        No hay servicios...
+      </span>
+    </ion-item>
+
+
+    <ion-item text-wrap *ngFor="let item of items" (click)="goToService(item.id)">
+      <label> {{ item.shortDesc }} </label>
+      <ion-row align-items-center>
+        <ion-col col-8>
+          <p>{{ item.name }}</p>
+        </ion-col>
+        <ion-col text-right col-4>
+          <!-- <button ion-button outline text-right color="secondary" class="button-comment">
+            <ion-icon name="text" class="icon-space"> </ion-icon> 21
+          </button> -->
+        </ion-col>
+      </ion-row>
+      <ion-row align-items-center>
+
+        <ion-col>
+          <!--  -->
+          <button *ngIf="item.category === 'Hogar'" ion-button class="home-style" color="warning">
+            <ion-icon name="home" class="icon-space"></ion-icon> Hogar
+          </button>
+
+          <button *ngIf="item.category === 'Mantenimiento'" ion-button class="mantein-style" color="secondary">
+            <ion-icon name="build" class="icon-space"></ion-icon> Mantenimiento
+          </button>
+
+          <button *ngIf="item.category === 'Jardinería'" ion-button class="jardineria-style" color="success">
+            <ion-icon name="leaf" class="icon-space"></ion-icon> Jardinería
+          </button>
+
+          <button *ngIf="item.category === 'Cuidados personales'" ion-button color="pink" class="cuidados-personales-style">
+            <ion-icon name="man" class="icon-space"></ion-icon> Cuidados personales
+          </button>
+
+          <!--  -->
+        </ion-col>
+        <ion-col text-right class="stars">
+          <ion-icon [ngStyle]="{color: (item.rating >= 1) ? 'orange' : 'gray'}" name="star"></ion-icon>
+          <ion-icon [ngStyle]="{color: (item.rating >= 2) ? 'orange' : 'gray'}" name="star"></ion-icon>
+          <ion-icon [ngStyle]="{color: (item.rating >= 3) ? 'orange' : 'gray'}" name="star"></ion-icon>
+          <ion-icon [ngStyle]="{color: (item.rating >= 4) ? 'orange' : 'gray'}" name="star"></ion-icon>
+          <ion-icon [ngStyle]="{color: (item.rating >= 5) ? 'orange' : 'gray'}" name="star"></ion-icon>
+        </ion-col>
+
+      </ion-row>
+      <!-- <img class="product-style" src="assets/imgs/{{ item.image }}" onerror="this.src='assets/imgs/avatar.png';"
+        item-left /> -->
+        <img [src]="getImage(item.image)" class="product-style" onError="this.src='assets/imgs/avatar.png'" item-left>
+
+    </ion-item>
+  </ion-list>
+
+</ion-content>

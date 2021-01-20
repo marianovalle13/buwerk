@@ -1,0 +1,68 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title text-left>
+      Agregar ubicación
+    </ion-title>
+  
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  
+  <form class="cool-form" (ngSubmit)="addLocation()" [formGroup]="form" padding>
+    <ion-item>
+      <ion-label stacked>Nombre</ion-label>
+      <ion-input formControlName="tag" type="text" ></ion-input>
+    </ion-item>
+    <!-- <ion-item>
+      <ion-label stacked>Seleccionar País</ion-label>
+      <ion-select cancelText="Cancelar">
+        <ion-option value="male">Argentina</ion-option>
+        <ion-option value="female">Brasil</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Seleccionar Provincia</ion-label>
+      <ion-select cancelText="Cancelar">
+        <ion-option value="male">Cordoba</ion-option>
+        <ion-option value="female">Bs As</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Seleccionar Ciudad</ion-label>
+      <ion-select cancelText="Cancelar">
+        <ion-option value="male">Cordoba</ion-option>
+        <ion-option value="female">Jesus Maria</ion-option>
+      </ion-select>
+    </ion-item> -->
+    <ion-item>
+      <ion-label stacked>Calle y número</ion-label>
+      <ion-input formControlName="street" type="text" ></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col col-6>
+        <ion-item>
+          <ion-label stacked>Piso</ion-label>
+          <ion-input formControlName="floor" type="text"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col col-6>
+      <ion-item>
+        <ion-label stacked>Dpto.</ion-label>
+        <ion-input formControlName="number" type="text" ></ion-input>
+      </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <div padding>
+      <button ion-button block outline color="white" class="default-btn button-class" [disabled]="!form.valid">
+        Agregar</button>
+    </div>
+  </form>
+</ion-content>

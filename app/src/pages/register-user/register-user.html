@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-left *ngIf="user">
+      Perfil
+    </ion-title>
+    <ion-title text-left *ngIf="!user">
+      Contratar servicios
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!-- 
+city
+province
+country -->
+
+<ion-content>
+  <ion-grid class="title-grid" *ngIf="!user">
+    <ion-row>
+      <ion-col col-1></ion-col>
+      <ion-col col-10 text-center >
+        <p>Completá los siguientes campos</p>
+      </ion-col>
+      <ion-col col-1></ion-col>
+    </ion-row>
+  </ion-grid>
+  <form class="cool-form" (ngSubmit)="register()" [formGroup]="form" padding>
+    
+    <ion-item (click)="loadImage()">
+      <ion-label stacked>Foto de perfil</ion-label>
+      <ion-avatar item-end>
+        <img [src]="image" onError="this.src='assets/imgs/avatar.png'">
+      </ion-avatar>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Nombre y Apellido</ion-label>
+      <ion-input type="text" formControlName="name"></ion-input>
+    </ion-item>
+    <!-- <ion-item>
+      <ion-label stacked>Fecha de nacimiento</ion-label>
+      <ion-input type="text" formControlName="birthDate"></ion-input>
+    </ion-item> -->
+    <ion-item>
+      <ion-label stacked>Teléfono de contacto</ion-label>
+      <ion-input type="number" formControlName="phone"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Sexo</ion-label>
+      <ion-select formControlName="sex" cancelText="Cancelar">
+        <ion-option value="male">Masculino</ion-option>
+        <ion-option value="female">Femenino</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Email</ion-label>
+      <ion-input type="text" formControlName="user"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Contraseña</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Seleccionar País</ion-label>
+      <ion-select cancelText="Cancelar" (ionChange)="onChangeCountry()" formControlName="country">
+        <ion-option *ngFor="let item of countries" value="{{item.id}}">{{item.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Seleccionar Provincia</ion-label>
+      <ion-select cancelText="Cancelar" (ionChange)="onChangeProvince()" formControlName="province">
+        <ion-option *ngFor="let item of provinces" value="{{item.id}}">{{item.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Seleccionar Ciudad</ion-label>
+      <ion-select cancelText="Cancelar" formControlName="city">
+        <ion-option *ngFor="let item of cities" value="{{item.id}}">{{item.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-row *ngIf="!user">
+      <ion-col col-3 style="display: flex; justify-content: center; align-items: center;" >
+        <ion-checkbox [(ngModel)]="termsAndConditions" [ngModelOptions]="{standalone: true}" color="dark" checked="false"></ion-checkbox>
+      </ion-col>
+      <ion-col col-9 (click)="openAgbPage()">
+        <p> Acepto los 
+          <u style="color: #245CD0;"> términos y condiciones</u></p>
+      </ion-col>
+    </ion-row>
+
+    <div padding>
+      <button ion-button block outline color="white" class="default-btn button-class" *ngIf="!user" [disabled]="!form.valid">REGISTRAR</button>
+      <button ion-button block outline color="white" class="default-btn button-class" *ngIf="user" [disabled]="!form.valid">ACTUALIZAR</button>
+    </div>
+  </form>
+</ion-content>

@@ -1,0 +1,119 @@
+<h4 class="section-title">
+  Usuarios</h4>
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a [routerLink]="['/users']">Usuarios</a>
+  </li>
+  <li class="breadcrumb-item active">Modificar Usuarios</li>
+</ol>
+<div class="container-fluid">
+  
+  <form class="w-100 pt-3" [formGroup]="formObject" (ngSubmit)="logForm(formObject.value)">
+    <div class="form-row">
+
+      <div class="form-group col-md-6">
+        <label for="name">Nombre</label>
+        <input class="form-control" type="text" id="" formControlName="name" />
+      </div>
+
+      <div class="form-group col-md-3">
+        <label for="categories">Sexo</label>
+        <select class="form-control" id="categories" formControlName="sex">
+          <option value="{{ s }}" *ngFor="let s of sex">{{ s }}</option>
+        </select>
+      </div>
+      
+      <div class="form-group col-md-3">
+        <label for="name">Fecha de nacimiento</label>
+        <input class="form-control" type="date" id="" formControlName="birthDate" />
+      </div>
+      
+      <div class="form-group col-md-6">
+        <label for="name">Telefono</label>
+        <input class="form-control" type="text" id="" formControlName="phone" />
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="name">Usuario</label>
+        <input class="form-control" type="text" id="" formControlName="user" />
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="name">Contraseña</label>
+        <input class="form-control" type="text" id="" formControlName="password" />
+      </div>
+
+      <div class="form-group col-md-6">
+      </div>
+      
+      <div class="form-group col-md-3">
+        <label for="categories">País</label>
+        <select class="form-control" id="" formControlName="country" #c (change)="selectCountry(c.value)">
+          <option selected>Seleccione</option>
+          <option value="{{country.id}}" *ngFor="let country of countriesArray">{{ country.name }}</option>
+        </select>
+      </div>
+      
+      <div class="form-group col-md-3">
+        <label for="categories">Provincia</label>
+        <select class="form-control" formControlName="province" #p (change)="selectProvince(p.value)">
+        <!-- <select class="form-control" id="" *ngIf="provincesDisabled" formControlName="province" #p (change)="selectProvince(p.value)"> -->
+          <option selected>Seleccione</option>
+          <option value="{{province.id}}" *ngFor="let province of provincesArray">{{ province.name }}</option>
+        </select>
+      </div>
+      
+      <div class="form-group col-md-3">
+        <label for="categories">Ciudad</label>
+        <select class="form-control" formControlName="city" #y (change)="selectCity(y.value)">
+        <!-- <select class="form-control" id="" *ngIf="citiesDisabled" formControlName="city" #y (change)="selectCity(y.value)"> -->
+          <option selected>Seleccione</option>
+          <option value="{{city.id}}" *ngFor="let city of citiesArray">{{ city.name }}</option>
+        </select>
+      </div>
+
+
+    </div>
+
+
+
+    <!-- <div class="card-deck">
+      <div class="row no-gutters">
+        <div class="card mt-2" style="width: 18rem;">
+          <img class="card-img-top" src="https://www.iamdecals.com/static/images/icon_outline_darkgray.17b96730f282.svg"
+            style="object-fit: contain;max-height: 150px;" alt="Card image cap">
+          <div class="card-body">
+            <h4 class="card-title">Agregar nueva imagen</h4>
+            <input type="file" class="form-control-file" id="imageSecondary" aria-describedby="fileHelp"
+              (change)="onChangeSecondary($event)">
+          </div>
+        </div>
+        <div class="card text-white bg-primary" style="width: 18rem;">
+          <img class="card-img-top" [src]="filesUrl + '/' + image" onerror="this.src='assets/img/avatar.png'"
+            style="object-fit: cover;max-height: 150px;" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Imagen Principal</h5>
+            <input type="file" class="form-control-file" id="image" aria-describedby="fileHelp"
+              (change)="onChange($event)">
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;" *ngFor="let image of images">
+          <img class="card-img-top" [src]="filesUrl + '/' + image" onerror="this.src='assets/img/avatar.png'"
+            style="object-fit: cover;max-height: 150px;" alt="Card image cap">
+          <button *ngIf="image" type="button" class="btn  btn-danger"
+            style="float: right;width: 40px;position: absolute;" (click)="deleteImage(image)">X</button>
+          <div class="card-body">
+            <h5 class="card-title">Reemplazar Imagen</h5>
+            <input type="file" class="form-control-file" id="image" aria-describedby="fileHelp"
+              (change)="onChange($event)">
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <button class="btn btn-primary mb-4 float-right" type="button" block [disabled]="!formObject.valid"
+      (click)="logForm(formObject.value)">
+      <i class="fa fa-paper-plane-o" aria-hidden="true"></i> GUARDAR
+    </button>
+  </form>
+</div>

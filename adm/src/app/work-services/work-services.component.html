@@ -1,0 +1,102 @@
+<div class="container-fluid">
+  <div class="row align-items-center">
+    <div class="col-sm-6">
+      <h1 class="section-title">
+        <i class="fa fa-handshake-o text-primary"></i> Servicios</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Fecha de creación</th>
+          <th>Fecha del servicio</th>
+          <!-- <th>Provincia</th> -->
+          <th>Tipo de servicio</th>
+          <th>Estado</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngIf="loading" class="text-center">
+          <td colspan="5">
+            <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+            Cargando Servicios...
+          </td>
+        </tr>
+        <tr *ngFor="let item of items">
+          <td>{{ item.creationDate | date:'dd/MM/yyyy' }}</td>
+          <td>{{ item.requiredDate }}</td>
+          <!-- <td>{{ item.province.name }}</td> -->
+          <td>{{ item.serviceType }}</td>
+          <!-- <td *ngIf="item.status" class="text-success"><i class="fa fa-check" aria-hidden="true"></i></td>
+          <td *ngIf="!item.status" class="text-danger"><i class="fa fa-times" aria-hidden="true"></i></td> -->
+          <td
+            [ngClass]="{'text-finish': item.status =='Terminado', 'text-pending': item.status =='Pendiente', 'text-confirmation': item.status =='Confirmado', 'text-rejected': item.status =='Rechazado'}">
+            {{ item.status }}
+          </td>
+          <td class="text-right">
+            <button type="button" class="btn btn-info btn-sm" (click)="open(content,item)">
+              <i class="fa fa-eye" aria-hidden="true"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+  
+<ng-template #content let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title"> {{itemSelected.serviceType}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-md-6">
+        <dl>
+          <dt>Fecha de creación</dt>
+          <dd>{{itemSelected.creationDate}}</dd>
+          <dt>Fecha del servicio</dt>
+          <dd>{{itemSelected.requiredDate}}</dd>
+          <dt>Dirección</dt>
+          <dd>{{itemSelected.address}}</dd>
+          <dt>Ciudad</dt>
+          <!-- <dd>{{itemSelected.city.name}}</dd> -->
+          <dd></dd>
+          <dt>Provincia</dt>
+          <!-- <dd>{{itemSelected.province.name}}</dd> -->
+          <dd></dd>
+          <dt>País</dt>
+          <!-- <dd>{{itemSelected.country.name}}</dd> -->
+          <dd></dd>
+          <dt>Estado</dt>
+          <!-- <dt *ngIf="itemSelected.status" class="text-success"><i class="fa fa-check" aria-hidden="true"></i></dt>
+          <dt *ngIf="!itemSelected.status" class="text-danger"><i class="fa fa-times" aria-hidden="true"></i></dt> -->
+
+          <dd
+            [ngClass]="{'text-finish': itemSelected.status =='Terminado', 'text-pending': itemSelected.status =='Pendiente', 'text-confirmation': itemSelected.status =='Confirmado', 'text-rejected': itemSelected.status =='Rechazado'}">
+            {{ itemSelected.status }}
+          </dd>
+        </dl>
+      </div>
+      <div class="col-md-6">
+        <dl>
+          <dt>Tipo de servicio</dt>
+          <dd>{{itemSelected.serviceType}}</dd>
+          <dt>Usuario</dt>
+          <dd>{{itemSelected.user.name}}</dd>
+          <dt>Profesional</dt>
+          <dd>{{itemSelected.profesional.name}}</dd>
+          <dt>Descripción</dt>
+          <dd>{{itemSelected.description}}</dd>
+        </dl>
+      </div>
+    </div>
+
+  </div>
+
+</ng-template>

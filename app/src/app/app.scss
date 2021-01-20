@@ -1,0 +1,67 @@
+// http://ionicframework.com/docs/theming/
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+.default-btn {
+    border-radius: 5px;
+    padding-top: 1rem 0;
+
+    &.button-md-white {
+        color: color($colors, primary);
+    }
+}
+
+.toolbar-background {
+    background: $bg-gradient;
+}
+
+.icon-space {
+    margin-right: 4px;
+}
+
+.item-md, .item-ios {
+    background-color: transparent !important;
+}
+
+//DateTimePicker
+.picker-md {
+    .picker-opt-selected {
+        color: color($colors, semidark)!important;
+    }
+
+    .picker-toolbar {
+        .button-inner {
+            color: color($colors, semidark);
+        }
+    }
+}
+.picker-ios {
+    .picker-opt-selected {
+        color: color($colors, secondary)!important;
+    }
+
+    .picker-toolbar {
+        .button-inner {
+            color: color($colors, gray);
+        }
+    }
+}
+
+// Terms modal
+.terms-modal {
+    .show-page {
+        overflow-y: scroll;
+    }
+}

@@ -1,0 +1,30 @@
+page-welcome {
+    .scroll-content {
+        background: color($colors, alt);
+
+        .swiper-slide {
+            align-items: flex-start;
+        }
+
+        .swiper-pagination-bullet {
+            background: white;
+            opacity: .2;
+        }
+
+        .swiper-pagination-bullet-active {
+            opacity: .8;
+        }
+
+        .transparent {
+            background: transparent;
+        }
+
+        ion-toolbar {
+            position: absolute;
+            .toolbar-background {
+                background: transparent;
+                border: none;
+            }
+        }
+    }
+}

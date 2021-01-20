@@ -1,0 +1,84 @@
+<!--
+  Generated template for the ArticlePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Artículo</ion-title>
+    <ion-buttons end>
+        <button ion-button clear *ngIf="!likedByUser" (click)="like()">
+          <ion-icon color="light" name="heart-outline"></ion-icon>
+        </button>
+        <button ion-button clear *ngIf="likedByUser" (click)="unLike()">
+          <ion-icon color="light" name="heart"></ion-icon>
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides pager>
+    <ion-slide *ngFor="let image of article.images" [ngStyle]="{'background': getBackground(image)}"
+      [ngStyle]="{'background-size': 'cover'}">
+      <!-- <div class="article-header">
+        <h2 class="title">{{article.title}}</h2>
+        <p class="category">{{category[article.category]}}</p>
+      </div> -->
+    </ion-slide>
+
+    <!-- <ion-slide>
+      <div class="article-header">
+        <h2 class="title">{{article.title}}</h2>
+        <p class="category">{{category[article.category]}}</p>
+      </div>
+    </ion-slide> -->
+
+  </ion-slides>
+  <div class="article-header" padding>
+    <h2 class="title">{{article.title}}</h2>
+    <p class="category">{{category[article.category]}}</p>
+    <!-- <h2 *ngIf="article.price" class="price">${{article.price}}</h2> -->
+  </div>
+
+  <!-- <ion-card>
+    <ion-card-content>
+
+      <ion-row>
+        <ion-col size="6" class="likeRow">
+          {{ amountOfLikes }}
+        </ion-col>
+        <ion-col size="6">
+          <button ion-button clear *ngIf="!likedByUser" (click)="like()">
+            <ion-icon color="primary" name="heart-outline"></ion-icon>
+          </button>
+
+          <button ion-button clear *ngIf="likedByUser" (click)="unLike()">
+            <ion-icon color="primary" name="heart"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+
+    </ion-card-content>
+  </ion-card> -->
+
+  <ion-card>
+    <ion-card-content [innerHTML]="article.content">
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="(article.video) && (article.video != '')">
+    <ion-item (click)="openVideo()">
+      <ion-icon item-start name="ios-videocam" color="primary"></ion-icon>
+      <h2>Ingresa al video</h2>
+      <ion-icon item-end name="ios-arrow-forward" color="primary"></ion-icon>
+    </ion-item>
+  </ion-card>
+
+</ion-content>
+<ion-footer *ngIf="access == 'PAYMENT'">
+  <button ion-button block icon-left (click)="confirmPayment()">
+    <ion-icon name="cart"></ion-icon>
+    COMPRAR
+  </button>
+</ion-footer>

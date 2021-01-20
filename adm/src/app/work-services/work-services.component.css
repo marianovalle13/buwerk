@@ -1,0 +1,16 @@
+.text-rejected {
+  color: #ec1d00 !important;
+  font-weight: bold;
+}
+.text-confirmation {
+  color: #007200 !important;
+  font-weight: bold;
+}
+.text-pending {
+  color: orange;
+  font-weight: bold;
+}
+.text-finish {
+  color: #4a90e2;
+  font-weight: bold;
+}

@@ -1,0 +1,22 @@
+<ul [hidden]="!isLoggedIn" class="nav flex-column flex-nowrap">
+  
+  <li class="nav-item">
+    <a routerLink="/profesionals" routerLinkActive="active" class="nav-link">Profesionales</a>
+  </li>
+  <li class="nav-item">
+    <a routerLink="/users" routerLinkActive="active" class="nav-link">Usuarios</a>
+  </li>
+  <li class="nav-item">
+    <a routerLink="/services" routerLinkActive="active" class="nav-link">Servicios</a>
+  </li>
+  <li class="nav-item">
+    <a routerLink="/places" routerLinkActive="active" class="nav-link">Lugares</a>
+  </li>
+  <li class="nav-item">
+    <a routerLink="/chats" routerLinkActive="active" class="nav-link">Conversaciones</a>
+  </li>
+
+  <li class="nav-item">
+    <a (click)=logout() class="nav-link"><i class="fa fa-close" aria-hidden="true"></i> Cerrar Sesión</a>
+  </li>
+</ul>

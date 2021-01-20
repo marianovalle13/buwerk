@@ -1,0 +1,145 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-left>
+      Prestador
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid class="img-container" no-padding>
+    <ion-row>
+      <ion-col col-12 text-center
+        [ngClass]="{'img-background-Hogar': item.category=='Hogar', 'img-background-Mantenimiento': item.category=='Mantenimiento', 'img-background-Jardinería': item.category=='Jardinería', 'img-background-Cuidados': item.category=='Cuidados personales'}">
+        <img [src]="getImage(item.image)" class="image" onError="this.src='assets/imgs/avatar.png'">
+        <ion-row>
+          <ion-col col-6 offset-3>
+            <h4 class="text"> {{item.name}}</h4>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-4 offset-1>
+            <button ion-button *ngIf="item.category == 'Hogar'" class="home-style" color="warning">
+              <ion-icon name="home" class="icon-space"></ion-icon> {{item.category}}
+            </button>
+            <button ion-button *ngIf="item.category == 'Mantenimiento'" class="home-style" color="secondary">
+              <ion-icon name="build" class="icon-space"></ion-icon> {{item.category}}
+            </button>
+            <button ion-button *ngIf="item.category == 'Jardinería'" class="home-style" color="success">
+              <ion-icon name="leaf" class="icon-space"></ion-icon> {{item.category}}
+            </button>
+            <button ion-button *ngIf="item.category == 'Cuidados personales'" class="home-style" color="pink">
+              <ion-icon name="man" class="icon-space"></ion-icon> {{item.category}}
+            </button>
+          </ion-col>
+          <ion-col col-2>
+          </ion-col>
+          <ion-col col-4 class="stars">
+            <ion-icon [ngStyle]="{color: (item.rating >= 1) ? 'orange' : 'gray'}" name="star"></ion-icon>
+            <ion-icon [ngStyle]="{color: (item.rating >= 2) ? 'orange' : 'gray'}" name="star"></ion-icon>
+            <ion-icon [ngStyle]="{color: (item.rating >= 3) ? 'orange' : 'gray'}" name="star"></ion-icon>
+            <ion-icon [ngStyle]="{color: (item.rating >= 4) ? 'orange' : 'gray'}" name="star"></ion-icon>
+            <ion-icon [ngStyle]="{color: (item.rating >= 5) ? 'orange' : 'gray'}" name="star"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-card class="card">
+        <ion-card-header
+          [ngClass]="{'colorHogar': item.category=='Hogar', 'colorMantenimiento': item.category=='Mantenimiento', 'colorJardinería': item.category=='Jardinería', 'colorCuidados': item.category=='Cuidados personales'}">
+          Actividad
+        </ion-card-header>
+        <ion-card-content>
+          {{item.shortDesc}}
+        </ion-card-content>
+
+        <!--  -->
+        <ion-card-header
+          [ngClass]="{'colorHogar': item.category=='Hogar', 'colorMantenimiento': item.category=='Mantenimiento', 'colorJardinería': item.category=='Jardinería', 'colorCuidados': item.category=='Cuidados personales'}">
+          Descripción
+        </ion-card-header>
+        <!--  -->
+
+        <ion-card-content>
+          {{item.desc}}
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+
+    <ion-row text-center margin-top>
+      <ion-col col-5 offset-1 text-left class="text-schedule">
+        <p>DISPONIBILIDAD HORARIA</p>
+      </ion-col>
+      <ion-col col-5 text-right class="text-schedule">
+        <p>RANGO DE PRECIO</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-6 offset-1 text-left>
+
+        <button *ngIf="item.timeDisponibilityMorning" ion-button outline text-left class="button-comment"
+          [ngClass]="{'colorHogar': item.category=='Hogar', 'colorMantenimiento': item.category=='Mantenimiento', 'colorJardinería': item.category=='Jardinería', 'colorCuidados': item.category=='Cuidados personales'}">
+          <ion-icon name="alarm" class="icon-space"></ion-icon>MAÑANA
+        </button>
+        <button *ngIf="item.timeDisponibilityAfternoon" ion-button outline text-left class="button-comment"
+          [ngClass]="{'colorHogar': item.category=='Hogar', 'colorMantenimiento': item.category=='Mantenimiento', 'colorJardinería': item.category=='Jardinería', 'colorCuidados': item.category=='Cuidados personales'}">
+          <ion-icon name="alarm" class="icon-space"></ion-icon>TARDE
+        </button>
+        <button *ngIf="item.timeDisponibilityNight" ion-button outline text-left class="button-comment"
+          [ngClass]="{'colorHogar': item.category=='Hogar', 'colorMantenimiento': item.category=='Mantenimiento', 'colorJardinería': item.category=='Jardinería', 'colorCuidados': item.category=='Cuidados personales'}">
+          <ion-icon name="alarm" class="icon-space"></ion-icon>NOCHE
+        </button>
+      </ion-col>
+      <ion-col col-4 text-right class="text-price">
+        <label>${{item.priceStart}} - ${{item.priceEnd}}</label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid class="description-grid" no-padding>
+    <ion-row>
+      <ion-col col-12>
+        <ion-item no-lines no-margin>
+          <span class="header-start" item-start>Comentarios</span>
+        </ion-item>
+      </ion-col>
+      <ion-col col-10>
+        <ion-item no-lines>
+          <ion-input type="text" [(ngModel)]="comment" [ngModelOptions]="{standalone:true}"
+            (keyup.enter)="createComment()" placeholder="Nuevo comentario..."></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col col-2>
+        <ion-item no-lines (click)="createComment()">
+          <ion-icon name="send"></ion-icon> 
+        </ion-item>
+      </ion-col>
+
+      <ion-col col-12 class="item" *ngFor="let item of comments">
+        <ion-item *ngIf="!item.comment == ''">
+          <ion-avatar item-left>
+            <img class="img-comment" [src]="getImage(item?.user?.image)"
+              onerror="this.src='assets/imgs/placeholder.png';" />
+          </ion-avatar>
+          <h2 class="name">{{ item?.user?.name }}</h2>
+          <p class="time">
+            {{ item?.timestamp }}
+          </p>
+          <p class="message" text-wrap>
+            {{ item?.comment }}
+          </p>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer padding text-center>
+  <button ion-button class="button-solicitud" (click)="goToRequest()"
+    [ngClass]="{'colorHogarButton': item.category=='Hogar', 'colorMantenimientoButton': item.category=='Mantenimiento', 'colorJardineríaButton': item.category=='Jardinería', 'colorCuidadosButton': item.category=='Cuidados personales'}">
+    SOLICITAR SERVICIO
+  </button>
+</ion-footer>

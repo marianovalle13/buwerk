@@ -1,0 +1,9 @@
+<ion-tabs #Tabs>
+  <ion-tab *ngIf="userId" [root]="tabServices" tabTitle="Servicios" tabIcon="hammer"></ion-tab>
+  <ion-tab *ngIf="professionalId" [root]="tabWork" tabTitle="Solicitudes" tabIcon="list"></ion-tab>
+
+  <ion-tab *ngIf="userId" [root]="tabMessages" tabTitle="Mensajes" tabIcon="chatbubbles" ></ion-tab>
+  <ion-tab *ngIf="professionalId" [root]="tabMessages" tabTitle="Mensajes" tabIcon="chatbubbles"></ion-tab>
+  <ion-tab *ngIf="userId" [root]="tabProfile" tabTitle="Mi Perfil" tabIcon="contact"></ion-tab>
+  <ion-tab *ngIf="professionalId" [root]="tabRegisterProfessional" tabTitle="Ver Perfil" tabIcon="contact"></ion-tab>
+</ion-tabs>

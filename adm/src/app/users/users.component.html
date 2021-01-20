@@ -1,0 +1,90 @@
+<div class="container-fluid">
+  <div class="row align-items-center">
+    <div class="col-sm-6">
+      <h1 class="section-title">
+        <i class="fa fa-user text-primary"></i> Usuarios</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Usuario</th>
+          <th>Sexo</th>
+          <!-- <th>Ubicación</th> -->
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngIf="loading" class="text-center">
+          <td colspan="5">
+            <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+            Cargando Usuarios...
+          </td>
+        </tr>
+        <tr *ngFor="let item of items">
+          <td>{{ item.name }}</td>
+          <td>{{ item.user }}</td>
+          <td>{{ item.sex }}</td>
+          <!-- <td>{{ item.country.name }}, {{ item.province.name }}, {{ item.city.name }}</td> -->
+          <td class="text-right">
+            <button type="button" class="btn btn-primary btn-sm" (click)="edit(item)">
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+            </button>
+            <!-- <button type="button" class="btn btn-danger btn-sm" (click)="remove(item)">
+              <i class="fa fa-close" aria-hidden="true"></i>
+            </button> -->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<!-- 
+  <ng-template #content let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title"><img
+          src='https://www.stickpng.com/assets/thumbs/585e4beacb11b227491c3399.png' alt="Profile Picture"
+          class="img-responsive img-rounded" style="max-height: 30px; max-width: 30px;"> {{itemSelected.firstName}}</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-md-6">
+          <dl>
+            <dt>Nombre</dt>
+            <dd>{{itemSelected.firstName}}</dd>
+            <dt>Apellido</dt>
+            <dd>{{itemSelected.lastName}}</dd>
+            <dt>Usuario</dt>
+            <dd>{{itemSelected.user}}</dd>
+            <dt>Contraseña</dt>
+            <dd>{{itemSelected.password}}</dd>
+            <dt>Fecha de nacimiento</dt>
+            <dd>{{itemSelected.birthDate}}</dd>
+            <dt>Nacionalidad</dt>
+            <dd>{{itemSelected.nationality}}</dd>
+          </dl>
+        </div>
+        <div class="col-md-6">
+          <dl>
+            <dt>Inscripción</dt>
+            <dd>{{itemSelected.inscription}}</dd>
+            <dt>DNI</dt>
+            <dd>{{itemSelected.dni}}</dd>
+            <dt>Dirección</dt>
+            <dd>{{itemSelected.address}}</dd>
+            <dt>Localidad</dt>
+            <dd>{{itemSelected.locality}}</dd>
+            <dt>Telefono</dt>
+            <dd>{{itemSelected.tel}}</dd>
+          </dl>
+        </div>
+      </div>
+
+    </div>
+
+  </ng-template> -->

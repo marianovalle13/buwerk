@@ -1,0 +1,227 @@
+[
+  {
+    "id":1,
+    "state": "Miami",
+    "country": "Estados Unidos"
+  },
+  {
+    "id":2,
+    "state": "Otros",
+    "country": "Estados Unidos"
+  },
+  {
+    "id":3,
+    "state": "Capital Federal",
+    "country": "Argentina"
+  },
+  {
+    "id":4,
+    "state": "Buenos Aires",
+    "country": "Argentina"
+  },
+  {
+    "id":5,
+    "state": "Catamarca",
+    "country": "Argentina"
+  },
+  {
+    "id":6,
+    "state": "Chaco",
+    "country": "Argentina"
+  },
+  {
+    "id":7,
+    "state": "Chubut",
+    "country": "Argentina"
+  },
+  {
+    "id":8,
+    "state": "Cordoba",
+    "country": "Argentina"
+  },
+  {
+    "id":9,
+    "state": "Corrientes",
+    "country": "Argentina"
+  },
+  {
+    "id":10,
+    "state": "Entre Rios",
+    "country": "Argentina"
+  },
+  {
+    "id":11,
+    "state": "Formosa",
+    "country": "Argentina"
+  },
+  {
+    "id":12,
+    "state": "Jujuy",
+    "country": "Argentina"
+  },
+  {
+    "id":13,
+    "state": "La Pampa",
+    "country": "Argentina"
+  },
+  {
+    "id":14,
+    "state": "La Rioja",
+    "country": "Argentina"
+  },
+  {
+    "id":15,
+    "state": "Mendoza",
+    "country": "Argentina"
+  },
+  {
+    "id":16,
+    "state": "Misiones",
+    "country": "Argentina"
+  },
+  {
+    "id":17,
+    "state": "Neuquen",
+    "country": "Argentina"
+  },
+  {
+    "id":18,
+    "state": "Rio Negro",
+    "country": "Argentina"
+  },
+  {
+    "id":19,
+    "state": "Salta",
+    "country": "Argentina"
+  },
+  {
+    "id":20,
+    "state": "San Juan",
+    "country": "Argentina"
+  },
+  {
+    "id":21,
+    "state": "San Luis",
+    "country": "Argentina"
+  },
+  {
+    "id":22,
+    "state": "Santa Cruz",
+    "country": "Argentina"
+  },
+  {
+    "id":23,
+    "state": "Santa Fe",
+    "country": "Argentina"
+  },
+  {
+    "id":24,
+    "state": "Santiago del Estero",
+    "country": "Argentina"
+  },
+  {
+    "id":25,
+    "state": "Tierra del Fuego",
+    "country": "Argentina"
+  },
+  {
+    "id":26,
+    "state": "Tucuman",
+    "country": "Argentina"
+  },
+  {
+    "id":27,
+    "state": "Artigas",
+    "country": "Uruguay"
+  },
+  {
+    "id":28,
+    "state": "Canelones",
+    "country": "Uruguay"
+  },
+  {
+    "id":29,
+    "state": "Cerro Largo",
+    "country": "Uruguay"
+  },
+  {
+    "id":30,
+    "state": "Colonia",
+    "country": "Uruguay"
+  },
+  {
+    "id":31,
+    "state": "Durazno",
+    "country": "Uruguay"
+  },
+  {
+    "id":32,
+    "state": "Flores",
+    "country": "Uruguay"
+  },
+  {
+    "id":33,
+    "state": "Florida",
+    "country": "Uruguay"
+  },
+  {
+    "id":34,
+    "state": "Lavalleja",
+    "country": "Uruguay"
+  },
+  {
+    "id":35,
+    "state": "Maldonado",
+    "country": "Uruguay"
+  },
+  {
+    "id":36,
+    "state": "Montevideo",
+    "country": "Uruguay"
+  },
+  {
+    "id":37,
+    "state": "Paysandú",
+    "country": "Uruguay"
+  },
+  {
+    "id":38,
+    "state": "Río Negro",
+    "country": "Uruguay"
+  },
+  {
+    "id":39,
+    "state": "Rivera",
+    "country": "Uruguay"
+  },
+  {
+    "id":40,
+    "state": "Rocha",
+    "country": "Uruguay"
+  },
+  {
+    "id":41,
+    "state": "Salto",
+    "country": "Uruguay"
+  },
+  {
+    "id":42,
+    "state": "San José",
+    "country": "Uruguay"
+  },
+  {
+    "id":43,
+    "state": "Soriano",
+    "country": "Uruguay"
+  },
+  {
+    "id":44,
+    "state": "Tacuarembó",
+    "country": "Uruguay"
+  },
+  {
+    "id":45,
+    "state": "Treinta y Tres",
+    "country": "Uruguay"
+  }
+]

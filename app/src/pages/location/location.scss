@@ -1,0 +1,43 @@
+page-location {
+
+    .content {
+        background: color($colors, primary);
+
+
+        .title-grid {
+            height: 10vh;
+            display: flex;
+            align-items: center;
+            flex-direction: inherit;
+
+            .row {
+                width: 100%;
+                opacity: .5;
+
+                h2 {
+                    color: white;
+                    font-weight: bold;
+                }
+
+                p {
+                    color: white;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    .list-header {
+        color: color($colors, primary);
+        font-size: 1.2em;
+
+        //font-weight: bold;
+        margin-bottom: 0;
+    }
+
+    .button-class {
+                border-radius: 30px;
+                height: 50px;
+            }
+
+}

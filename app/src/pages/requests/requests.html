@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-left>
+      Solicitudes
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list class="product-list" *ngIf="items">
+
+    <ion-item no-lines text-center *ngIf="items.length == 0">
+      <span ion-text color="gray">
+        <ion-icon name="color-fill" margin-right></ion-icon>
+        No hiciste solicitudes...
+      </span>
+    </ion-item>
+
+    <ion-item text-wrap *ngFor="let item of items" (click)="goToRequestInfo(item)">
+      <ion-avatar item-left>
+        <!-- <img class="product-style" src="assets/imgs/{{ item.profesional.image }}" onerror="this.src='assets/imgs/avatar.png';" /> -->
+        <img [src]="getImage(item.profesional.image)" class="product-style" onError="this.src='assets/imgs/avatar.png'">
+      </ion-avatar>
+      <h2>{{ item.description }}</h2>
+      <p>{{ item.profesional.name }}</p>
+      <!-- <ion-note item-end [ngClass]="{'text-finish': item.status =='Terminado', 'text-pending': item.status =='Pendiente', 'text-confirmation': item.status =='Confirmado', 'text-rejected': item.status =='Rechazado'}">
+        {{ item.status }}
+      </ion-note> -->
+      <ion-icon item-end [name]="getIcon(item.status)" [color]="getIconColor(item.status)"></ion-icon>
+    </ion-item>
+
+
+  </ion-list>
+
+</ion-content>
+

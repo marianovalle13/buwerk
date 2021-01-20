@@ -1,0 +1,5 @@
+<ion-list>
+  <ion-list-header>Seleccione Tipo</ion-list-header>
+  <button [ngClass]="{'active': !filterSelected}" ion-item (click)="close()">Todos</button>
+  <button [ngClass]="{'active': item.selected}" *ngFor="let item of categories" ion-item (click)="close(item.id)">{{item.name}}</button>
+</ion-list>
